@@ -32,7 +32,7 @@ function game(n){
     
   }
 }
-game(5)
+game(1)
 if(playerwon === computerwon){
       alert('its a draw');
 }else{

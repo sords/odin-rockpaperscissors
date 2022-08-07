@@ -1,0 +1,7 @@
+#header {
+    display: flex;
+    justify-content: center;
+    background-color: slategrey;
+    color:whitesmoke;
+    margin: 0px;
+}
