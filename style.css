@@ -1,7 +1,24 @@
+body {
+    margin: 0px;
+}
+
 #header {
     display: flex;
     justify-content: center;
-    background-color: slategrey;
-    color:whitesmoke;
-    margin: 0px;
+    background: slategrey;
+    color: whitesmoke;
+    padding: 30px 10px;
+    font-size: xx-large;
+}
+
+.score {
+    display:flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.playerscore , .computerscore{
+    border:1px solid black;
+    padding: 50px;
+    
 }

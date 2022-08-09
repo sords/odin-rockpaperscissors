@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,33 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <div id="header">ROCK PAPER SCISSORS</div>
 
     <div id="main">
-       <button class="choice">rock</button>
-       <button class="choice">paper</button>
-       <button class="choice">scissors</button>
+        <div class="score">
+            <div class="scorebordp1">
+                <div class="playerscore">0</div>
+                <div class="plscore">player Score</div>
+            </div>
+            <div class="seprater" style="margin: 0px 40px; margin-top:50px;">-</div>
+            <div class="scorebordcom">
+                <div class="computerscore">4</div>
+                <div class="comscore">computer Score</div>
+            </div>
+        </div>
+
+        <div class="commentry">click the button to start the game</div>
+        <div class="choosebtn">
+            <button class="choice">rock</button>
+            <button class="choice">paper</button>
+            <button class="choice">scissors</button>
+        </div>
     </div>
 
     <div id="footer"></div>
     <script src="script.js"></script>
 </body>
+
 </html>
