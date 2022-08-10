@@ -12,13 +12,41 @@ body {
 }
 
 .score {
-    display:flex;
+    display: flex;
     justify-content: center;
     margin: 20px;
 }
 
-.playerscore , .computerscore{
-    border:1px solid black;
+.playerscore,
+.computerscore {
+    border: 1px solid black;
+    margin: 0px auto;
     padding: 50px;
-    
+    font-size: 50px;
+
+}
+
+.plscore,.comscore {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.commentry {
+    display: flex;
+    justify-content: center;
+    border: 1px solid burlywood;
+    width: 300px;
+    height: 120px;
+    margin:0px auto ;
+}
+
+.text {
+    padding: 50px 50px;
+}
+
+.choosebtn {
+    display: flex;
+    justify-content: space-around;
+    margin:20px;
 }
