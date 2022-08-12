@@ -4,70 +4,60 @@ const rules = {
   'paper': 'rock'
 }
 
+let choices = document.querySelectorAll('.choice');
+let text = document.querySelector('.text');
+let plyerchoice;
+let score1 = 0;
+let score2 = 0;
+
 function getComputerChoice() {
   const compchoice = ['rock', 'paper', 'scissors'];
   return (compchoice[Math.floor(Math.random() * 3)])
 }
 
-let button = document.querySelectorAll('.button');
-let plyerchoice;
-let text = document.querySelector('.text');
-//let playerscore = document.querySelector('.payerscore');
-//let computerscore = document.querySelector('.computerscore')
-let score1 = 0;
-let score2 = 0;
-let comentry = document.querySelector('.commentry');
-button.forEach(element => {
-  element.addEventListener('click', () => {
-    plyerchoice = element.getAttribute('id');
+choices.forEach(choice => {
+  choice.addEventListener('click', () => {
+    plyerchoice = choice.getAttribute('id');
     singleround(getComputerChoice(), plyerchoice)
   })
 })
-function refreshpage() {
-
-  let refresh = document.getElementById('refresh');
-  text.textContent = 'PLAY AGAIN';
-  refresh.addEventListener('click', () => {
-    window.location.reload(true)
-  })
-  let repress = document.getElementById('repress')
-  let btn = document.createElement('button');
- btn.setAttribute('id','refresh1')
- repress.appendChild(btn)
- repress.getElementById('refresh1').innerText = 'PLAY AGAIN';
-
-}
 
 function singleround(computerChoice, playerChoice) {
-  console.log(computerChoice, playerChoice)
   if (score1 === 5 || score2 === 5) {
     refreshpage();
-
   } else if (computerChoice === playerChoice) {
-    text.textContent = "it's a tie my dear";
+    text.textContent = `it's a tie : ${playerChoice} | ${computerChoice}`;
   } else {
     if (rules[computerChoice] === playerChoice) {
-      text.textContent = "it's time to take control the world";
+      text.textContent = `You won : ${playerChoice} | ${computerChoice}`;
       score1++;
       document.getElementById('playerscore').innerText = score1;
       if (score1 === 5) {
-        text.textContent = 'player have won'
-        //refreshpage()
+        text.textContent = 'YOU WON!'
+        refreshpage()
       }
-
     } else {
-      text.textContent = 'i think human owns this';
-      console.log(computerscore.value);
+      text.textContent = `Computer won : ${playerChoice} | ${computerChoice}`;
       score2++;
       document.getElementById('computerscore').innerText = score2;
       if (score2 === 5) {
-        text.textContent = 'compu have won'
-        //refreshpage()
+        text.textContent = 'YOU LOST!'
+        refreshpage()
       }
     }
-
-
   }
+}
+
+let btn = document.createElement('button');
+let refresh = document.getElementById('refresh')
+
+function refreshpage() {
+  btn.setAttribute('id', 'refreshbtn')
+  refresh.appendChild(btn)
+  document.getElementById('refreshbtn').innerText = 'PLAY AGAIN';
+  btn.addEventListener('click', () => {
+    window.location.reload(true)
+  })
 }
 
 

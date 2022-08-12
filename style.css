@@ -19,36 +19,33 @@ body {
 .score {
     display: flex;
     justify-content: center;
-    margin: 0px;
 }
 
 .playerscore,
 .computerscore {
-    border: 1px solid whitesmoke;
     margin: 20px;
-    padding: 50px;
+    padding: 30px 30px 0px 30px;
     font-size: 50px;
 
 }
 
 .plscore,
-.comscore {
+.compscore {
     text-align: center;
     font-size: 20px;
-    padding-top: 10px;
 }
 
 .commentry {
     display: flex;
     justify-content: center;
-    border: 1px solid whitesmoke;
-    width: 300px;
-    height: 120px;
+    width: 350px;
+    height: 80px;
     margin: 20px auto;
+
 }
 
 .text {
-    padding: 50px 50px;
+    padding: 30px 50px;
 }
 
 .choosebtn {
@@ -56,15 +53,28 @@ body {
     justify-content: center;
     margin: 20px;
     background-color: black;
+    padding-bottom: 50px;
 }
 
 img {
     margin: 15px;
-    padding: 0px;
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
+}
+
+img:hover{
+    transform: rotate(7deg);
 }
 
 .playagain {
-    width: 100px;
+    width: 200px;
+}
+
+#refresh {
+    text-align: center;
+}
+
+#footer {
+    text-align: center;
+    padding-bottom: 10px;
 }
