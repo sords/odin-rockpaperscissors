@@ -1,0 +1,70 @@
+body {
+    margin: 0px;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    background: rgb(217, 222, 214);
+    color: rgb(19, 15, 15);
+    padding: 30px 30px;
+    font-size: xx-large;
+}
+
+#main {
+    background-color: black;
+    color: white;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+
+.playerscore,
+.computerscore {
+    border: 1px solid whitesmoke;
+    margin: 20px;
+    padding: 50px;
+    font-size: 50px;
+
+}
+
+.plscore,
+.comscore {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.commentry {
+    display: flex;
+    justify-content: center;
+    border: 1px solid whitesmoke;
+    width: 300px;
+    height: 120px;
+    margin: 20px auto;
+}
+
+.text {
+    padding: 50px 50px;
+}
+
+.choosebtn {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    background-color: black;
+}
+
+img {
+    margin: 15px;
+    padding: 0px;
+    height: 200px;
+    width: 200px;
+}
+
+.playagain {
+    width: 100px;
+}

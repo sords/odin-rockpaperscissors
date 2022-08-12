@@ -1,40 +1,73 @@
-
-let playerwon = 0;
-let computerwon = 0;
-
+const rules = {
+  'rock': 'scissors',
+  'scissors': 'paper',
+  'paper': 'rock'
+}
 
 function getComputerChoice() {
-    const compchoice = ['rock' , 'paper' , 'scissors'];
-    return (compchoice[Math.floor(Math.random() * 3)])
+  const compchoice = ['rock', 'paper', 'scissors'];
+  return (compchoice[Math.floor(Math.random() * 3)])
 }
-function singleround(computerChoice, playerChoice){
-      const rules = {
-        'rock':'scissors',
-        'scissors':'paper',
-        'paper':'rock'
-      }
-      if(computerChoice === playerChoice){
-        computerwon++;
-        playerwon++;
-      }else{
-        if(rules[computerChoice] === playerChoice) {
-         computerwon++;
-        } 
-         playerwon++;    
-      }
+
+let button = document.querySelectorAll('.button');
+let plyerchoice;
+let text = document.querySelector('.text');
+//let playerscore = document.querySelector('.payerscore');
+//let computerscore = document.querySelector('.computerscore')
+let score1 = 0;
+let score2 = 0;
+let comentry = document.querySelector('.commentry');
+button.forEach(element => {
+  element.addEventListener('click', () => {
+    plyerchoice = element.getAttribute('id');
+    singleround(getComputerChoice(), plyerchoice)
+  })
+})
+function refreshpage() {
+
+  let refresh = document.getElementById('refresh');
+  text.textContent = 'PLAY AGAIN';
+  refresh.addEventListener('click', () => {
+    window.location.reload(true)
+  })
+  let repress = document.getElementById('repress')
+  let btn = document.createElement('button');
+ btn.setAttribute('id','refresh1')
+ repress.appendChild(btn)
+ repress.getElementById('refresh1').innerText = 'PLAY AGAIN';
 
 }
-function game(n){ 
-  for(let i = 0; i < n; i++ ){
-    let computerChoice = getComputerChoice();
-    let playerChoice = prompt('enter your choice:');
-    singleround(computerChoice,playerChoice);
-    
+
+function singleround(computerChoice, playerChoice) {
+  console.log(computerChoice, playerChoice)
+  if (score1 === 5 || score2 === 5) {
+    refreshpage();
+
+  } else if (computerChoice === playerChoice) {
+    text.textContent = "it's a tie my dear";
+  } else {
+    if (rules[computerChoice] === playerChoice) {
+      text.textContent = "it's time to take control the world";
+      score1++;
+      document.getElementById('playerscore').innerText = score1;
+      if (score1 === 5) {
+        text.textContent = 'player have won'
+        //refreshpage()
+      }
+
+    } else {
+      text.textContent = 'i think human owns this';
+      console.log(computerscore.value);
+      score2++;
+      document.getElementById('computerscore').innerText = score2;
+      if (score2 === 5) {
+        text.textContent = 'compu have won'
+        //refreshpage()
+      }
+    }
+
+
   }
 }
-game(5)
-if(playerwon === computerwon){
-      alert('its a draw');
-}else{
-      (playerwon > computerwon) ? alert(`you score is ${playerwon},you won`) : alert(`your score is ${playerwon},you lose`);
-}
+
+

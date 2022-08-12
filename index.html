@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,37 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
+    <div id="header">ROCK PAPER SCISSORS</div>
+
+    <div id="main">
+        <div class="score">
+            <div class="scorebordp1">
+                <div id='playerscore' class="playerscore">0</div>
+                <div class="plscore">Your Score</div>
+            </div>
+            <div class="seprater" style="margin: 0px 40px; margin-top:70px;">-</div>
+            <div class="scorebordcom">
+                <div id="computerscore" class="computerscore">0</div>
+                <div class="comscore">computer Score</div>
+            </div>
+        </div>
+
+        <div class="commentry">
+            <div class="text">click the button to start the game</div>
+            <div id="playagain" color="white"></div>
+        </div>
+
+        <div class="choosebtn">
+            <div id="rock" class="button"><img src="images-rock.png" alt="rock"></div>
+            <div id="paper" class="button"><img src="images-paper.png" alt=""></div>
+            <div id="scissors" class="button"><img src="image-sissors.png" alt=""></div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
     <script src="script.js"></script>
 </body>
+
 </html>
